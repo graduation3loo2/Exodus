@@ -1,5 +1,6 @@
 
 /* Start Login, Signup Forms */
+#login{display: block;}
 .modal{
   display: none;
   position: fixed;
