@@ -4,7 +4,6 @@
   <head>
     <meta charset="utf-8">
     <title>Exodus -> User</title>
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
@@ -13,13 +12,56 @@
   </head>
   <body>
 
+    <!-- ///////////////////////////////////////////////////////////////////////// -->
+    <div id="edit-info" class="modal">
+			<div class="contain">
+				<form> <!--el data 7atro7 lel server esmo eh -->
+					<div class="form-head">
+						<h2>edit information account</h2>
+				    <i class="fas fa-times" onclick="document.getElementById('edit-info').style.display='none'" ></i>
+					</div>
+					<div class="form-mid">
+						<input type="file" name="pic" accept="image/*">
+						<input type="text" placeholder="Username" name="usernamedb" >
+						<input type="text" placeholder="Enter Email" name="email" >
+						<input type="text" placeholder="Phone Number" name="number" required >
+						<input type="text" placeholder="Country" name="Country" required>
+						<input type="text" placeholder="City" name="city" >
+						<input type="password" placeholder="Enter Old Password" name="psw" required>
+						<input type="password" placeholder="Enter New Password" name="psw" required>
+						<input type="password" placeholder="Confirm New Password" name="psw" required>
+					</div>
+					<div class="form-foot">
+						<button type="submit">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+    <!-- ///////////////////////////////////////////////////////////////////////// -->
+		<div id="delete-confirm" class="modal">
+			<div class="contain">
+				<form> <!--el data 7atro7 lel server esmo eh -->
+					<div class="form-head">
+						<h2>are you sure ?</h2>
+				    <i class="fas fa-times" onclick="document.getElementById('delete-confirm').style.display='none'" ></i>
+					</div>
+					<div class="form-mid">
+						<input type="password" placeholder="Enter Your Password" name="psw" required>
+					</div>
+					<div class="form-foot">
+						<button type="submit">delete</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
     <!-- Start Header -->
     <div class="header">
       <div class="overlay">
         <div class="navbar"> <!-- Start Nav Bar -->
           <div class="contain">
             <div class="logo">
-              <a href="{% url 'home' %}"><img src="{% static 'photos/others/logo-2-ed.png' %}" alt=""></a>
+              <a href="{% url 'user' %}"><img src="{% static 'photos/others/logo-2-ed.png' %}" alt=""></a>
             </div>
             <div class="tabs">
               <ul>
@@ -66,7 +108,7 @@
           <h3 data-id="tab3">my account<i class="fas fa-chevron-right"></i></h3>
         </div>
 
-        <a href="#">sign out</a>
+        <a href="{% url 'home' %}">sign out</a>
       </div>
       <!-- End Tabs Panel -->
 
@@ -79,127 +121,51 @@
           </div>
           <div>
             <div id="history" class="post-contain active">
-              <div class="post">
-                <div class="post-img">
-                  <img src="../Exodus/static/photos/header-7.jpg" alt="">
-                  <div class="overlay">
-                    <button class="learn-more" type="button" name="button">review</button>
+              <a href="{% url 'trip-page' %}">
+                <div class="post">
+                  <div class="post-img">
+                    <img src="{% static 'photos/others/header-7.jpg' %}" alt="">
+                    <div class="overlay">
+                      <button class="learn-more" type="button" name="button">review</button>
+                    </div>
+                  </div>
+                  <div class="post-info">
+                    <h2>cairo, giza</h2>
+                    <h2>lucky tour</h2>
+                    <h4><span>price</span> 1200</h4>
+                    <h4><span>date</span> 2 / 5 / 2019</h4>
+                    <h4><span>duration</span> 5 days</h4>
+                    <h4><span>meals</span> fullboard</h4>
+
+                    <h4><span><i class="fas fa-plane"></i>going</span> 35</h4>
+                    <h4><span><i class="far fa-eye"></i>views</span> 80</h4>
                   </div>
                 </div>
-                <div class="post-info">
-                  <h2>cairo, giza</h2>
-                  <h2>lucky tour</h2>
-                  <h4><span>price</span> 1200</h4>
-                  <h4><span>date</span> 2 / 5 / 2019</h4>
-                  <h4><span>duration</span> 5 days</h4>
-                  <h4><span>meals</span> fullboard</h4>
-
-                  <h4><span><i class="fas fa-plane"></i>going</span> 35</h4>
-                  <h4><span><i class="far fa-eye"></i>views</span> 80</h4>
-                </div>
-              </div>
-
-              <div class="post">
-                <div class="post-img">
-                  <img src="../Exodus/static/photos/header-8.jpg" alt="">
-                  <div class="overlay">
-                    <button class="learn-more" type="button" name="button">review</button>
-                  </div>
-                </div>
-                <div class="post-info">
-                  <h2>alexandria</h2>
-                  <h2>cairo overland</h2>
-                  <h4><span>price</span> 350</h4>
-                  <h4><span>date</span> 18 / 6 / 2019</h4>
-                  <h4><span>duration</span> 2 days</h4>
-                  <h4><span>meals</span> halfboard</h4>
-
-                  <h4><span><i class="fas fa-plane"></i>going</span> 22</h4>
-                  <h4><span><i class="far fa-eye"></i>views</span> 65</h4>
-                </div>
-              </div>
-
-              <div class="post">
-                <div class="post-img">
-                  <img src="../Exodus/static/photos/header-5.jpg" alt="">
-                  <div class="overlay">
-                    <button class="learn-more" type="button" name="button">review</button>
-                  </div>
-                </div>
-                <div class="post-info">
-                  <h2>luxor and aswan</h2>
-                  <h2>roca travel</h2>
-                  <h4><span>price</span> 1800</h4>
-                  <h4><span>date</span> 5 / 6 / 2019</h4>
-                  <h4><span>duration</span> 7 days</h4>
-                  <h4><span>meals</span> halfboard</h4>
-
-                  <h4><span><i class="fas fa-plane"></i>going</span> 50</h4>
-                  <h4><span><i class="far fa-eye"></i>views</span> 120</h4>
-                </div>
-              </div>
+              </a>
             </div>
 
             <div id="saved" class="post-contain">
-              <div class="post">
-                <div class="post-img">
-                  <img src="../Exodus/static/photos/header-4.jpg" alt="">
-                  <div class="overlay">
-                    <button class="learn-more" type="button" name="button">learn more</button>
+              <a href="{% url 'trip-page' %}">
+                <div class="post">
+                  <div class="post-img">
+                    <img src="{% static 'photos/others/haeder-4.jpg' %}" alt="">
+                    <div class="overlay">
+                      <button class="learn-more" type="button" name="button">learn more</button>
+                    </div>
+                  </div>
+                  <div class="post-info">
+                    <h2>cairo, giza</h2>
+                    <h2>lucky tour</h2>
+                    <h4><span>price</span> 1200</h4>
+                    <h4><span>date</span> 2 / 5 / 2019</h4>
+                    <h4><span>duration</span> 5 days</h4>
+                    <h4><span>meals</span> fullboard</h4>
+
+                    <h4><span><i class="fas fa-plane"></i>going</span> 35</h4>
+                    <h4><span><i class="far fa-eye"></i>views</span> 80</h4>
                   </div>
                 </div>
-                <div class="post-info">
-                  <h2>cairo, giza</h2>
-                  <h2>lucky tour</h2>
-                  <h4><span>price</span> 1200</h4>
-                  <h4><span>date</span> 2 / 5 / 2019</h4>
-                  <h4><span>duration</span> 5 days</h4>
-                  <h4><span>meals</span> fullboard</h4>
-
-                  <h4><span><i class="fas fa-plane"></i>going</span> 35</h4>
-                  <h4><span><i class="far fa-eye"></i>views</span> 80</h4>
-                </div>
-              </div>
-
-              <div class="post">
-                <div class="post-img">
-                  <img src="../Exodus/static/photos/header-3.jpg" alt="">
-                  <div class="overlay">
-                    <button class="learn-more" type="button" name="button">learn more</button>
-                  </div>
-                </div>
-                <div class="post-info">
-                  <h2>alexandria</h2>
-                  <h2>cairo overland</h2>
-                  <h4><span>price</span> 350</h4>
-                  <h4><span>date</span> 18 / 6 / 2019</h4>
-                  <h4><span>duration</span> 2 days</h4>
-                  <h4><span>meals</span> halfboard</h4>
-
-                  <h4><span><i class="fas fa-plane"></i>going</span> 22</h4>
-                  <h4><span><i class="far fa-eye"></i>views</span> 65</h4>
-                </div>
-              </div>
-
-              <div class="post">
-                <div class="post-img">
-                  <img src="../Exodus/static/photos/header-2.jpg" alt="">
-                  <div class="overlay">
-                    <button class="learn-more" type="button" name="button">learn more</button>
-                  </div>
-                </div>
-                <div class="post-info">
-                  <h2>luxor and aswan</h2>
-                  <h2>roca travel</h2>
-                  <h4><span>price</span> 1800</h4>
-                  <h4><span>date</span> 5 / 6 / 2019</h4>
-                  <h4><span>duration</span> 7 days</h4>
-                  <h4><span>meals</span> halfboard</h4>
-
-                  <h4><span><i class="fas fa-plane"></i>going</span> 50</h4>
-                  <h4><span><i class="far fa-eye"></i>views</span> 120</h4>
-                </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -210,105 +176,54 @@
             <button type="button" name="button">search</button>
           </div>
           <div class="clear"></div>
-          <div class="post">
-            <div class="post-img">
-              <img src="../Exodus/static/photos/others/agency-3.jpg" alt="">
-              <div class="overlay">
-                <button class="learn-more" type="button" name="button">agency page</button>
+          <a href="{% url 'user-agency' %}">
+            <div class="post">
+              <div class="post-img">
+                <img src="{% static 'photos/others/agency-3.jpg' %}" alt="">
+                <div class="overlay">
+                  <button class="learn-more" type="button" name="button">agency page</button>
+                </div>
+              </div>
+              <div class="post-info">
+                <h2>cairo overland</h2>
+                <h2>35 followers</h2>
+                <div class="clear"></div>
+                <p>This website helps you choose a trip that suits you from a variety of options
+                  in an easy and simple way that simplifies your options this website helps you
+                  choose a trip that suits you from a variety of options
+                  in an easy and simple way that simplifies your options.</p>
+
+                <h4><span><i class="fas fa-star"></i>rating</span> 6.4</h4>
+                <h4><span><i class="fas fa-plane"></i>trips</span> 19</h4>
               </div>
             </div>
-            <div class="post-info">
-              <h2>cairo overland</h2>
-              <h2>35 followers</h2>
-              <div class="clear"></div>
-              <p>This website helps you choose a trip that suits you from a variety of options
-                in an easy and simple way that simplifies your options this website helps you
-                choose a trip that suits you from a variety of options
-                in an easy and simple way that simplifies your options.</p>
+          </a>
 
-              <h4><span><i class="fas fa-star"></i>rating</span> 6.4</h4>
-              <h4><span><i class="fas fa-plane"></i>trips</span> 19</h4>
-            </div>
-          </div>
-
-          <div class="post">
-            <div class="post-img">
-              <img src="../Exodus/static/photos/others/agency-2.jpg" alt="">
-              <div class="overlay">
-                <button class="learn-more" type="button" name="button">agency page</button>
-              </div>
-            </div>
-            <div class="post-info">
-              <h2>travel choice</h2>
-              <h2>45 followers</h2>
-              <div class="clear"></div>
-              <p>This website helps you choose a trip that suits you from a variety of options
-                in an easy and simple way that simplifies your options this website helps you
-                choose a trip that suits you from a variety of options
-                in an easy and simple way that simplifies your options.</p>
-
-              <h4><span><i class="fas fa-star"></i>rating</span> 5.4</h4>
-              <h4><span><i class="fas fa-plane"></i>trips</span> 15</h4>
-            </div>
-          </div>
-
-          <div class="post">
-            <div class="post-img">
-              <img src="../Exodus/static/photos/others/agency-1.jpg" alt="">
-              <div class="overlay">
-                <button class="learn-more" type="button" name="button">agency page</button>
-              </div>
-            </div>
-            <div class="post-info">
-              <h2>roca travel</h2>
-              <h2>40 followers</h2>
-              <div class="clear"></div>
-              <p>This website helps you choose a trip that suits you from a variety of options
-                in an easy and simple way that simplifies your options this website helps you
-                choose a trip that suits you from a variety of options
-                in an easy and simple way that simplifies your options.</p>
-
-              <h4><span><i class="fas fa-star"></i>rating</span> 7.5</h4>
-              <h4><span><i class="fas fa-plane"></i>trips</span> 25</h4>
-            </div>
-          </div>
         </div>
         <!-- //////////////////////////////////// -->
         <div id="tab3" class="tab-details">
           <div class="user-info">
-            <img src="../Exodus/static/photos/others/user-avatar.png" alt="">
+            <img src="{% static 'photos/others/user-avatar.png' %}" alt="">
             <form class="" action="index.html" method="post">
               <div>
                 <label>username</label>
                 <h3>aboelsayed78</h3>
-                <input id="username" type="text" name="" value="">
-                <i class="far fa-edit" data-id="username"></i>
               </div>
               <div>
                 <label>age</label>
                 <h3>78</h3>
-                <input id="age" type="number" name="" value="">
-                <i class="far fa-edit" data-id="age"></i>
               </div>
               <div>
                 <label>address</label>
                 <h3>alexandria, elagamy, abo-youssef</h3>
-                <input id="address" type="text" name="" value="">
-                <i class="far fa-edit" data-id="address"></i>
-              </div>
-              <div>
-                <label>password</label>
-                <h3>********</h3>
-                <input id="password" type="text" name="" value="">
-                <i class="far fa-edit" data-id="password"></i>
               </div>
               <div>
                 <label>phone</label>
                 <h3>01091118646</h3>
-                <input id="phone" type="number" name="" value="">
-                <i class="far fa-edit" data-id="phone"></i>
               </div>
             </form>
+            <button type="button" onclick="document.getElementById('edit-info').style.display='block'">edit</button>
+            <button type="button" onclick="document.getElementById('delete-confirm').style.display='block'">delete account</button>
           </div>
         </div>
       </div>
@@ -320,46 +235,28 @@
     <!-- Start Footer -->
     <div class="footer">
       <div class="contain">
-        <div class="slogan">
-          <h2>exodus</h2>
-          <p>This website helps you choose a trip that suits you from a variety of options
-            in an easy and simple way that simplifies your options.</p>
-        </div>
-        <div class="contact">
-          <h2>contact us</h2>
-          <div class="messenger">
-            <span>messenger</span>
-            <p>facebook.com/exodus</p>
-          </div>
-          <div class="whats">
-            <span>whats app</span>
-            <p>+20 0120 745 3145</p>
-          </div>
-          <div class="email">
-            <span>email</span>
-            <p>exodus@yahoo.com</p>
-          </div>
-        </div>
         <div class="links">
-          <h2>links</h2>
-          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
-          <div class="app">
-            <a href="https://play.google.com/store" target="_blank">
-            <i class="fab fa-android"></i>
-            <h3>download exodus app</h3>
-          </a>
-          </div>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.yahoo.com" target="_blank"><i class="fab fa-yahoo"></i></a>
           <div class="clear"></div>
+        </div>
+        <div class="copyright">
+          <h3>Copyright © 2019 <span>Exodus.com</span> , All Rights Reserved.</h3>
+        </div>
+        <div class="andro-app">
+          <div class="app">
+            <a href="{% url 'agency' %}" target="_blank">
+              <i class="fab fa-android"></i>
+              <h3>download exodus app</h3>
+            </a>
+          </div>
         </div>
       </div>
     </div>
     <!-- End Footer -->
 
     <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
-    <script src="{% static 'js/jquery.skitter.min.js' %}"></script>
-    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
     <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>

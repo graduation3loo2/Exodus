@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Exodus => Vote Page</title>
-    <!-- Start Skitter Slider HEAD Section -->
     <link rel="stylesheet" href="{% static 'css/skitter.css' %}" />
-    <!-- End Skitter Slider HEAD Section -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
@@ -71,7 +68,7 @@
     <div class="navbar">
       <div class="contain">
         <div class="logo">
-          <a href="home.html"><img src="../Exodus/static/photos/others/logo-2-ed.png" alt=""></a>
+          <a href="{% url 'user' %}"><img src="../Exodus/static/photos/others/logo-2-ed.png" alt=""></a>
         </div>
         <div class="tabs">
           <ul>
@@ -104,22 +101,22 @@
         <ul>
           <li> <!-- Slide - 1 -->
             <a href="#cut">
-              <img src="../Exodus/static/photos/header-4.jpg" class="cut" />
+              <img src="{% static 'photos/header-3.jpg' %}" class="cut" />
             </a>
           </li>
           <li> <!-- Slide - 2 -->
             <a href="#swapBarsBack">
-              <img src="../Exodus/static/photos/header-10.jpg" class="swapBarsBack" />
+              <img src="{% static 'photos/header-7.jpg' %}" class="swapBarsBack" />
             </a>
           </li>
           <li> <!-- Slide - 3 -->
             <a href="#paralell">
-              <img src="../Exodus/static/photos/header-11.jpg" class="paralell" />
+              <img src="{% static 'photos/header-8.jpg' %}" class="paralell" />
             </a>
           </li>
           <li> <!-- Slide - 4 -->
             <a href="#glassBlock">
-              <img src="../Exodus/static/photos/header-12.jpg" class="glassBlock" />
+              <img src="{% static 'photos/header-10.jpg' %}" class="glassBlock" />
             </a>
           </li>
         </ul>
@@ -153,37 +150,22 @@
     <!-- Start Footer -->
     <div class="footer">
       <div class="contain">
-        <div class="slogan">
-          <h2>exodus</h2>
-          <p>This website helps you choose a trip that suits you from a variety of options
-            in an easy and simple way that simplifies your options.</p>
-        </div>
-        <div class="contact">
-          <h2>contact us</h2>
-          <div class="messenger">
-            <span>messenger</span>
-            <p>facebook.com/exodus</p>
-          </div>
-          <div class="whats">
-            <span>whats app</span>
-            <p>+20 0120 745 3145</p>
-          </div>
-          <div class="email">
-            <span>email</span>
-            <p>exodus@yahoo.com</p>
-          </div>
-        </div>
         <div class="links">
-          <h2>links</h2>
-          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
-          <div class="app">
-            <a href="https://play.google.com/store" target="_blank">
-            <i class="fab fa-android"></i>
-            <h3>download exodus app</h3>
-          </a>
-          </div>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.yahoo.com" target="_blank"><i class="fab fa-yahoo"></i></a>
           <div class="clear"></div>
+        </div>
+        <div class="copyright">
+          <h3>Copyright © 2019 <span>Exodus.com</span> , All Rights Reserved.</h3>
+        </div>
+        <div class="andro-app">
+          <div class="app">
+            <a href="{% url 'agency' %}" target="_blank">
+              <i class="fab fa-android"></i>
+              <h3>download exodus app</h3>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -192,7 +174,6 @@
     <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
     <script src="{% static 'js/jquery.skitter.min.js' %}"></script>
     <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
     <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
