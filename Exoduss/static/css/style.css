@@ -1,177 +1,137 @@
 /* Start Login, Signup Forms */
-.modal .modal-contentlogin{
-  border-radius: 5px ;
-  background: linear-gradient(to bottom,  #4561ab 0%, #669999 100%);
-  width:fit-content;
-  height:fit-content;
-  box-sizing: border-box;
-  position:fixed;
-  top:25%;
-  left:35%;
-  width:30%;
-}
-.modal p{
-  color: white;
-  font-size: 30px;
-  text-align: center;
-}
-.modal input [type=text],
-.modal input [type=password]{
-  width: 100%;
-  padding:12px 20px;
-  margin: 8px;
-  display: inline-block;
-  border:1px solid #ccc;
-  box-sizing: border-box;
-}
-.modal label{
-  font-size: 20px;
-  color: darkgrey;
-}
-.modal .rm{
-  margin:8px ;
-  font-size: 15px;
-}
-.modal .psw{
-  font-size: 15px;
-  margin: 20px 0;
-  float: right;
-
-}
-/* Set a style for all buttons */
-.modal button {
-  background-color: inherit;
-  color: white;
-  padding: 15px 25px;
-  margin: 8px 10px;
-  border: none;
-  cursor: pointer;
-  width: auto;
-  right: 25%;
-  top: 1%;
-  font-size: larger;
-  border-radius: 8px;
-}
-.modal button:hover {
-  opacity: 0.8;
-  color: #55afff; /*el loon el maktob beh abl ma 2o2af 3alih*/
-  background-color: rgba(163, 163, 163, 0.28);
-}
-.modal button.active {
-  background-color: rgba(163, 163, 163, 0.28); /*el loon lama bo2af 3alih*/
-  color: #55afff;
-  border-radius:8px;
-}
-.modal .btn{
-  background:linear-gradient(to bottom, #479ed1 0%, #66ccff 100%);
-  color: white;
-  padding: 14px 20px;
-  margin: 8px auto;
-  display: block;
-  border: none;
-  cursor: pointer;
-  width:350px;
-  border-radius: 10px;
-}
-
-.modal .btn:hover {
-  opacity: 0.8;
-  color: white;
-}
-.modal .usercontainer{
-  text-align: center;
-  margin: 15px 0 3px 0;
-  position: relative;
-}
-.modal input{
-  width:98%;
-  height:40px;
-  border-radius:5px;
-  font-size:15px;
-}
-.modal img.avatar{
-  width:30%;
-  border-radius: 50%;
-}
-.modal .container{
-  padding: 16px;
-}
-
 .modal{
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 999; /* Sit on top */
-  left: 0;
+  display: none;
+  position: fixed;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* el background barra el popup lama btft7 */
-  padding-top: 60px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: #0009;
+  z-index: 99;
 }
-/* Modal Content/Box */
-.modal .modal-content {
+.modal form{
+  width: 450px;
+  overflow: hidden;
   background: linear-gradient(to bottom,  #4561ab 0%, #669999 100%);
-  margin: 5% auto 15% auto;
-  border: 1px solid #888;
-  width: 35%;
-  height: auto;
+  margin: 50px auto;
+  padding: 15px 25px;
+  border-radius: 5px;
+  animation: animatezoom .5s linear;
 }
-.modal .btnsignup{
-  background:linear-gradient(to bottom, #479ed1 0%, #66ccff 100%);
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 40px ;
-  border: none;
-  cursor: pointer;
-  width:350px;
-  border-radius: (10px 0%);
+.modal form .form-head{
+  position: relative;
+  overflow: hidden;
 }
-
-.modal .btnsignup:hover {
-  opacity: 0.8;
-  color: white;
+.modal form .form-head h2{
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #eee;
+  margin: 20px 0;
+  text-align: center;
 }
-/* The Close Button (x) */
-.modal .close {
+.modal form .form-head i{
   position: absolute;
-  right: 25px;
-  top: -15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: black ;
-}
-
-.modal .close:hover,
-.modal .close:focus {
-  color: #f44336;
+  top: 20px;
+  right: 5px;
+  font-size: 25px;
+  transition: all .20s ease-in-out;
   cursor: pointer;
+  overflow: hidden;
+  color: #eee;
+}
+.modal form .form-head i:hover{
+  color: #e00;
+}
+.modal form .form-mid{
+  overflow: hidden;
+}
+.modal form .form-mid label{
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  padding: 0 5px;
+  text-transform: capitalize;
+  color: #eee;
+  font-size: 19px;
+}
+.modal form .form-mid input, textarea{
+  width: 100%;
+  display: block;
+  padding: 8px 5px;
+  margin: 15px 0;
+  color: #555;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.modal form .form-mid span{
+  margin: 15px 0;
+  text-transform: capitalize;
+  display: inline-block;
+  color: #222;
+}
+.modal form .form-mid span.terms{
+  width: 100%;
+  text-align: center;
+}
+.modal form .form-mid span.remember{
+  text-align: left;
+  width: 47.5%;
+  margin-left: 2%
+}
+.modal form .form-mid span.forgot{
+  text-align: right;
+  width: 47.5%;
+  margin-right: 2%;
+}
+.modal form .form-mid span input{
+  width: 18px;
+  height: 18px;
+  display: inline;
+  position: relative;
+  top: 3px;
+  margin: 0 5px 0 0;
+}
+.modal form .form-mid span a{
+  text-decoration: underline;
+  color: #222;
+}
+.modal form .form-foot{
+  overflow: hidden;
+}
+.modal form .form-foot button{
+  width: 60%;
+  display: block;
+  padding: 8px 0;
+  margin: 10px auto;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #eee;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .20s ease-in-out;
+}
+.modal form .form-foot button:hover{
+  background-color: #fff;
+  color: var(--main-color);
+}
+textarea{
+  height: 150px;
 }
 
-.modal .form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+hr{
+  border: 0.5px solid black;
 }
-
-.modal .animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
-}
-
 @keyframes animatezoom {
   from {transform: scale(0)}
   to {transform: scale(1)}
 }
-.modal .terms{
-  font-size: 15px;
-  margin: 35px;
-  color: black;
-}
 /* End Login, Signup Forms */
+
 
 /* Start Header */
 .header{
