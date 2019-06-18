@@ -1,3 +1,4 @@
+
 /* Start Login, Signup Forms */
 .modal{
   display: none;
@@ -132,10 +133,9 @@ hr{
 }
 /* End Login, Signup Forms */
 
-
 /* Start Header */
 .header{
-  background-image: url(../photos/header-5.jpg);
+  background-image: url(../photos/header-2.jpg);
   background-size: cover;
   background-position: bottom;
   position: relative;
@@ -157,7 +157,7 @@ hr{
 }
 
 .header .navbar .contain .logo img{
-  height: 55px;
+  height: 40px;
 }
 
 .header .navbar .contain .tabs{
@@ -172,14 +172,13 @@ hr{
   cursor: pointer;
 }
 .header .navbar .contain .tabs ul .sign_in a{
-  background-color: #fff;
-  color: #55afff;
-  border: 2px solid #3898ec;
-
-}
-.header .navbar .contain .tabs ul .sign_in a:hover{
   background-color: var(--main-color);
   color: #fff;
+  border: 2px solid #3898ec;
+}
+.header .navbar .contain .tabs ul .sign_in a:hover{
+  background-color: #fff;
+  color: #55afff;
 }
 .header .navbar .contain .tabs ul li:hover a{
   background-color: rgba(163, 163, 163, 0.28);
@@ -189,7 +188,7 @@ hr{
   font-size: 17px;
   color: #fff;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 2px solid transparent;
   font-weight: 600;
   text-transform: capitalize;
@@ -202,141 +201,117 @@ hr{
 /* Start Footer */
 .footer{
   overflow: hidden;
-  background: #eee;
+  background: #333;
   border-top: 1px solid #bbb;
   margin-top: 50px;
+  padding: 10px;
 }
-.footer .slogan{
-  float: left;
-  width: 33.33%;
-}
-.footer .slogan h2{
-  text-transform: capitalize;
-  text-align: center;
-  width: 28%;
-  padding: 5px;
-  margin: 5px auto;
-  color: #333;
-  font-size: 26px;
-  border-bottom: 2px solid #333;
-}
-.footer .slogan p{
-  font-weight: 500;
-  line-height: 1.7;
-  color: #555;
-  text-align: center;
-  margin: 10px;
-  padding: 0 15px;
-}
-
-.footer .contact{
-  float: left;
-  width: 33.33%;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px #bbb;
-  padding-bottom: 30px;
-}
-.footer .contact h2{
-  text-transform: capitalize;
-  text-align: center;
-  width: 40%;
-  padding: 5px;
-  margin: 5px auto 18px;
-  color: #333;
-  font-size: 26px;
-  border-bottom: 2px solid #333;
-}
-.footer .contact div{
-  margin-top: 12px;
-  overflow: hidden;
-  padding: 0 25px;
-}
-.footer .contact span{
-  font-weight: 500;
-  text-transform: capitalize;
-  background: var(--main-color);
-  padding: 5px;
-  display: inline-block;
-  border-radius: 5px;
-  width: 100px;
-  text-align: center;
-  color: #eee;
-}
-.footer .contact .whats span{
-  background-color: #24c42e;
-}
-.footer .contact .email span{
-  background-color: #8223b6;
-}
-.footer .contact p{
-  font-weight: 700;
-  display: inline-block;
-  margin-left: 5px;
-}
-
 .footer .links{
   float: left;
-  width: 33.33%;
-  text-align: center;
-}
-.footer .links h2{
-  text-transform: capitalize;
-  text-align: center;
-  width: 22%;
-  padding: 5px;
-  margin: 5px auto;
-  color: #333;
-  font-size: 26px;
-  border-bottom: 2px solid #333;
+  width: 15%;
+  text-align: left;
+  margin-top: 10px;
 }
 .footer .links a{
-  margin: 7px 5px 3px;
+  margin-right: 15px;
   overflow: hidden;
   display: inline-block;
 }
+.footer .links a:last-of-type{
+  margin-right: 0;
+}
 .footer .links a i{
-  color: #999;
-  font-size: 35px;
+  width: 35px;
+  text-align: center;
+  color: #aaa;
+  font-size: 30px;
   transition: all 0.25s ease-in-out;
 }
-.footer .links a .fa-facebook-square:hover{
+.footer .links a .fa-facebook-f:hover{
   color: #4267b2;
 }
-.footer .links a .fa-twitter-square:hover{
+.footer .links a .fa-twitter:hover{
   color: #1da1f3;
 }
-.footer .links .app{
-  margin: 10px auto;
-  width: 265px;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  box-shadow: 0px 0px 10px 0px #aaa;
-  overflow: hidden;
-  transition: all 0.15s ease-in-out;
+.footer .links a .fa-yahoo:hover{
+  color: #6001d2;
 }
-.footer .links .app:hover{
-  border-color: #a4c639;
-  box-shadow: none;
+
+.footer .copyright{
+  float: left;
+  width: 61%;
+  text-align: center;
+  margin-top: 15px;
 }
-.footer .links .app a{
+.footer .copyright h3{
+  color: #aaa;
+  font-weight: 600;
+}
+.footer .copyright h3 span{
+  color: var(--main-color);
+}
+
+.footer .andro-app{
+  float: left;
+  width: 24%;
+}
+.footer .andro-app .app{
   margin: 0;
-  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #a4c639;
+  overflow: hidden;
+  text-align: center;
 }
-.footer .links .app a i{
+.footer .andro-app .app a{
+  margin: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+.footer .andro-app .app a i{
   font-size: 50px;
   float: left;
   color: #a4c639;
 }
-.footer .links .app a h3{
+.footer .andro-app .app a h3{
   display: inline-block;
   text-transform: capitalize;
   margin-left: 8px;
   float: right;
   margin-top: 15px;
-  color: #333;
+  color: #aaa;
 }
-
 /* End Footer */
+
+/* Start Scroll To Top Button */
+.scroll-top{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #eee;
+  font-size: 20px;
+  cursor: pointer;
+}
+.scroll-top span{
+  opacity: 0;
+  float: left;
+  background-color: var(--main-color);
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 15px 0 0 15px;
+  left: 50%;
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+}
+.scroll-top i{
+  padding: 15px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  z-index: 2;
+}
+/* End Scroll To Top Button */
 
 /*
  *
@@ -381,12 +356,22 @@ body{ /* Variables */
   clear: both;
 }
 
-input, button:focus{
+input, select, button, textarea:focus{
   outline: none;
+}
+input, select, textarea{
+  border: 2px solid transparent;
+}
+textarea:focus,
+input:focus,
+select:focus{
+  border-color: var(--main-color);
+  box-shadow: none;
 }
 
 a{
   text-decoration: none;
+  color: transparent;
 }
 
 ul{

@@ -1,27 +1,11 @@
 
-.header .head-title{ /* Start Search Header */
-  text-align: center;
-  display: inline-block;
-  border-radius: 10px;
-  background-color: rgba(163, 163, 163, 0.28);
-}
-.header .head-title h1{
-  text-transform: capitalize;
-  color: #eee;
-  font-size: 40px;
-  padding: 0 20px;
-  border-radius: 15px;
-  margin: 10px 0;
-}
-/* End Header */
-
 /* Start Agencies */
 .agencies{
   margin-top: 30px;
   padding: 10px 20px;
   overflow: hidden;
   background: #eee;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0px 0px 10px 1px #bbb;
 }
 .agencies .search-vote{
@@ -32,10 +16,9 @@
 .agencies .search-vote input{
   float: left;
   width: 77%;
-  padding: 8px 8px 8px 15px;
-  border-radius: 10px;
-  border: none;
-  font-size: 18px;
+  padding: 5px 8px 5px 15px;
+  border-radius: 5px;
+  font-size: 17px;
   font-style: italic;
   margin: 0 1%;
   box-shadow: 0 0 10px 0 #888;
@@ -46,12 +29,12 @@
 .agencies .search-vote button{
   float: left;
   width: 20%;
-  padding: 8px;
+  padding: 7px 0;
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 17px;
   background: var(--main-color);
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   color: #eee;
   font-weight: 500;
@@ -61,7 +44,7 @@
 
 .agencies .agency-card:hover{
   background: #ddd;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 2px 2px 5px 0 #aaa;
 }
 .agencies .agency-card{
@@ -92,33 +75,21 @@
   color: #333;
   margin-bottom: 10px;
 }
-.agencies .agency-card .follow-btn:hover{
-  background: #1869b1;
-  box-shadow: 0px 0px 10px 1px #888;
-}
-.agencies .agency-card .follow-btn{
+.agencies .agency-card button{
+  font-weight: 600;
   background: var(--main-color);
   border-radius: 5px;
-  padding: 5px;
-  display: inline-block;
-  transition: all 0.25s ease-in-out;
-}
-.agencies .agency-card .follow-btn span{
-  font-weight: 600;
-  color: #eee;
-  font-size: 16px;
-  border-right: 1px solid #eee;
-  padding: 0 8px 0 4px;
-}
-.agencies .agency-card .follow-btn button{
-  font-weight: 600;
-  background: transparent;
-  color: #eee;
+  padding: 5px 20px;
+  color: #fff;
   border: none;
   font-size: 16px;
   margin: 0 5px;
   cursor: pointer;
   text-transform: capitalize;
+  transition: all 0.25s ease-in-out;
+}
+.agencies .agency-card .followed{
+  background: #bbb;
 }
 
 /* End Agencies */
