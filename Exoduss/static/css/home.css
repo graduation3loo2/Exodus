@@ -452,20 +452,35 @@
   color: #333;
   margin-bottom: 10px;
 }
-.most-followed .agencies .agency-card button{
-  font-weight: 600;
+.most-followed .agencies .agency-card .follow-btn:hover{
+  background: #1869b1;
+  box-shadow: 0px 0px 10px 1px #888;
+}
+.most-followed .agencies .agency-card .follow-btn{
   background: var(--main-color);
   border-radius: 5px;
-  padding: 5px 20px;
-  color: #fff;
+  padding: 5px;
+  display: inline-block;
+  transition: all 0.25s ease-in-out;
+}
+.most-followed .agencies .agency-card .follow-btn span{
+  font-weight: 600;
+  color: #eee;
+  font-size: 16px;
+  border-right: 1px solid #eee;
+  padding: 0 8px 0 4px;
+}
+.most-followed .agencies .agency-card .follow-btn button{
+  font-weight: 600;
+  background: transparent;
+  color: #eee;
   border: none;
   font-size: 16px;
   margin: 0 5px;
   cursor: pointer;
   text-transform: capitalize;
-  transition: all 0.25s ease-in-out;
 }
-.most-followed .agencies .agency-card .followed{
+.most-followed .agencies .agency-card .follow-btn .followed{
   background: #bbb;
 }
 /* End Most Followed Agencies */
