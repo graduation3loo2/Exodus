@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="css/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/exo-2.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+
+    </script>
+  </head>
+  <body>
+
+    <!-- Start Signup Form -->
+    <div id="signup" class="modal">
+      <div class="contain">
+        <form> <!--el data 7atro7 lel server esmo eh -->
+          <div class="form-head">
+            <h2>create your account</h2>
+            <i class="fas fa-times" onclick="document.getElementById('signup').style.display='none'"></i>
+          </div>
+          <div class="form-mid">
+            <input type="text" placeholder="Username" name="usernamedb" >
+            <input type="text" placeholder="Enter Email" name="email" >
+            <input type="text" placeholder="Phone Number" name="number" required >
+            <input type="text" placeholder="Country" name="Country" required>
+            <input type="text" placeholder="City" name="city" >
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Confirm Password" name="psw" required>
+            <span class="terms">by proceeding i agree to EXODUS's <a href="#">Terms & Privacy</a></span>
+          </div>
+          <div class="form-foot">
+            <button type="submit">signup</button>
+            <button type="button" onclick="document.getElementById('signup').style.display='none';
+            document.getElementById('login').style.display='block'" >already have account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Signup Form -->
+
+    <!-- Start Login Form -->
+    <div id="login" class="modal">
+      <div class="contain">
+        <form> <!--el data 7atro7 lel server esmo eh -->
+          <div class='form-head'>
+            <h2>please login</h2>
+            <i class="fas fa-times" onclick="document.getElementById('login').style.display='none'"></i>
+          </div>
+          <div class="form-mid">
+            <label for="name">username</label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+            <label for="psw">password</label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <span class="remember"><input type="checkbox" name="remember">Remember me </span>
+            <span class="forgot"><a href="#">forgot password?</a></span>
+          </div>
+          <div class="form-foot">
+            <button type="submit" class="btnsignup" >login</button>
+            <button type="button" class="btnsignup" onclick="document.getElementById('login').style.display='none';
+            document.getElementById('signup').style.display='block'" >create account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Login Form -->
+
+    <!-- Edit User Info Form -->
+    <div id="edit-user" class="modal">
+    	<div class="contain">
+    		<form> <!--el data 7atro7 lel server esmo eh -->
+    			<div class="form-head">
+    				<h2>edit information account</h2>
+    		    <i class="fas fa-times" onclick="document.getElementById('edit-user').style.display='none'" ></i>
+    			</div>
+    			<div class="form-mid">
+    				<input type="file" name="pic" accept="image/*">
+    				<input type="text" placeholder="Username" name="usernamedb" >
+    				<input type="text" placeholder="Enter Email" name="email" >
+    				<input type="text" placeholder="Phone Number" name="number" required >
+    				<input type="text" placeholder="Country" name="Country" required>
+    				<input type="text" placeholder="City" name="city" >
+    				<input type="password" placeholder="Enter Old Password" name="psw" required>
+    				<input type="password" placeholder="Enter New Password" name="psw" required>
+    				<input type="password" placeholder="Confirm New Password" name="psw" required>
+    			</div>
+    			<div class="form-foot">
+    				<button type="submit">save</button>
+    			</div>
+    		</form>
+    	</div>
+    </div>
+    <!-- Confirm Deletion Of Acoount -->
+    <div id="delete-confirm" class="modal">
+    	<div class="contain">
+    		<form> <!--el data 7atro7 lel server esmo eh -->
+    			<div class="form-head">
+    				<h2>are you sure ?</h2>
+    		    <i class="fas fa-times" onclick="document.getElementById('delete-confirm').style.display='none'" ></i>
+    			</div>
+    			<div class="form-mid">
+    				<input type="password" placeholder="Enter Your Password" name="psw" required>
+    			</div>
+    			<div class="form-foot">
+    				<button type="submit">delete</button>
+    			</div>
+    		</form>
+    	</div>
+    </div>
+
+
+    <!-- Start Header -->
+    <div class="header">
+      <div class="overlay">
+        <div class="navbar"> <!-- Start Nav Bar -->
+          <div class="contain">
+            <div class="logo">
+              <a href="user.html"><img src="photos/others/logo-2-ed.png" alt=""></a>
+            </div>
+            <div class="tabs">
+              <ul>
+                <li>
+                  <a href="home.html">home</a>
+                </li>
+                <li>
+                  <a href="trips.html">trips</a>
+                </li>
+                <li>
+                  <a href="votes.html">votes</a>
+                </li>
+                <li>
+                  <a href="agencies.html">agencies</a>
+                </li>
+                <li class="sign_in">
+                  <a onclick="document.getElementById('login').style.display='block'">sign in</a>
+                </li>
+              </ul>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div> <!-- End Nav Bar -->
+      </div>
+    </div>
+    <!-- End Header -->
+
+    <iframe src="user-agency.html" id="myframe" onload="resizeIframe();"></iframe>
+
+    <!-- Start Footer -->
+    <div class="footer">
+      <div class="contain">
+        <div class="links">
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.yahoo.com" target="_blank"><i class="fab fa-yahoo"></i></a>
+          <div class="clear"></div>
+        </div>
+        <div class="copyright">
+          <h3>Copyright © 2019 <span>Exodus.com</span> , All Rights Reserved.</h3>
+        </div>
+        <div class="andro-app">
+          <div class="app">
+            <a href="agency.html" target="_blank">
+              <i class="fab fa-android"></i>
+              <h3>download exodus app</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Footer -->
+
+    <!-- Start Scroll To Top Button -->
+    <div class="scroll-top">
+      <span>Top</span>
+      <i class="fas fa-arrow-up"></i>
+    </div>
+    <!-- End Scroll To Top Button -->
+
+    <!-- Start Div Error -->
+    <section>
+      <h1>unfortunatly!...</h1>
+      <p>this website dosen't support screen less than 400px</p>
+    </section>
+    <!-- End Div Error -->
+
+    <script src="js/JQuery%20(v3.2.1).js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
