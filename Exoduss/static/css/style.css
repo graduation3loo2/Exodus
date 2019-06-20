@@ -1,6 +1,5 @@
 
 /* Start Login, Signup Forms */
-#login{display: block;}
 .modal{
   display: none;
   position: fixed;
@@ -199,13 +198,21 @@ hr{
   transition: all 0.25s ease-in-out;
 } /* End Nav Bar */
 
+iframe{
+  width: 100%;
+  display: block;
+  border: none;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
 /* Start Footer */
 .footer{
   overflow: hidden;
   background: #333;
   border-top: 1px solid #bbb;
-  margin-top: 50px;
   padding: 10px;
+  margin-top: 10px;
 }
 .footer .links{
   float: left;
@@ -314,6 +321,65 @@ hr{
 }
 /* End Scroll To Top Button */
 
+/* ===== Large Laptop & Medium Desktop ===== */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .header .navbar .contain .logo img {height: 35px;}
+  .header .navbar .contain .tabs ul li {margin: 4px 4px;width: 18%;}
+  .header .navbar .contain .tabs ul li a {font-size: 16px;padding: 8px 0;}
+
+  .footer .links a {margin-right: 5px;}
+  .footer .links a i {font-size: 27px;}
+  .footer .copyright {width: 56%;}
+  .footer .copyright h3 {font-size: 18px;}
+  .footer .andro-app {width: 29%;}
+  .footer .andro-app .app a i {font-size: 45px;}
+  .footer .andro-app .app a h3 {margin-left: 5px;font-size: 18px;}
+
+  .scroll-top {font-size: 18px;}
+}
+/* ===== Small Labtop & Tablet Landscape ===== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .header .navbar {padding-top: 0;}
+  .header .navbar .contain > div {float: none;margin: 15px auto;}
+  .header .navbar .contain .logo {width: 80%; text-align: center;}
+  .header .navbar .contain .logo img {height: 33px;}
+  .header .navbar .contain .tabs {width: 80%;margin: 0 auto;}
+  .header .navbar .contain .tabs ul li a {padding: 7px 0;}
+
+  .footer .links a {margin-right: 0;}
+  .footer .links a i {font-size: 25px;}
+  .footer .links {width: 22%;}
+  .footer .copyright {width: 78%;}
+  .footer .copyright h3 {font-size: 18px;}
+  .footer .andro-app {width: 50%;margin-top: 25px;}
+
+  .scroll-top {font-size: 16px;}
+  .scroll-top span {font-size: 16px;}
+}
+/* ===== Mobile Landscape & Tablet Portrait ===== */
+@media (max-width: 600px){
+  .header .navbar {padding-top: 0;}
+  .header .navbar .contain > div {float: none;margin: 10px auto;}
+  .header .navbar .contain .logo {width: 95%; text-align: center;}
+  .header .navbar .contain .logo img {height: 28px;}
+  .header .navbar .contain .tabs {width: 95%;margin: 0 auto;}
+  .header .navbar .contain .tabs ul li {margin: 0 3px;width: 18%;}
+  .header .navbar .contain .tabs ul li a {font-size: 15px;padding: 5px 0;}
+
+  .footer .links {width: 25%;}
+  .footer .links a {margin-right: 5px;}
+  .footer .links a i {font-size: 25px;width: 25px;}
+  .footer .copyright {width: 70%;margin-top: 5px;}
+  .footer .copyright h3 {font-size: 18px;}
+  .footer .andro-app {width: 95%;margin-top: 15px;}
+  .footer .andro-app .app {width: 65%;margin: 0 auto;}
+  .footer .andro-app .app a i {font-size: 42px}
+  .footer .andro-app .app a h3 {font-size: 17px;margin-top: 12px;}
+
+  .scroll-top {font-size: 15px;padding: 13px;right: 10px}
+  .scroll-top span {font-size: 15px;margin-top: 8px}
+}
+
 /*
  *
  *
@@ -339,10 +405,7 @@ body{ /* Variables */
   font-family: 'Exo 2', Arial, Tahoma;
 }
 
-.contain{
-  margin: 0 auto;
-  width: 1100px;
-}
+.contain{margin: 0 auto;width: 1100px;}
 
 .overlay{
   position: absolute;
@@ -353,29 +416,49 @@ body{ /* Variables */
   background-color: #1d1d1d80;
 }
 
-.clear{
-  clear: both;
-}
+.clear{clear: both;}
 
-input, select, button, textarea:focus{
-  outline: none;
-}
-input, select, textarea{
-  border: 2px solid transparent;
-}
+input, select, button, textarea:focus{outline: none;}
+
+input, select, textarea{border: 2px solid transparent;}
+
 textarea:focus,
 input:focus,
-select:focus{
-  border-color: var(--main-color);
-  box-shadow: none;
+select:focus{border-color: var(--main-color);box-shadow: none;}
+
+a{text-decoration: none;color: transparent;}
+
+ul{list-style: none;overflow: hidden;}
+
+section{
+  display: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin: 50px auto;
+  width: 90%;
+  text-align: center;
+  color: #333;
+  line-height: 1.5;
 }
 
-a{
-  text-decoration: none;
-  color: transparent;
+/* ===== Large Desktop ===== */
+@media (min-width: 1200px) {
+  .contain {width: 1100px;margin: auto;}
 }
-
-ul{
-  list-style: none;
-  overflow: hidden;
+/* ===== Large Laptop & Medium Desktop ===== */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .contain {width: 850px;margin: auto;}
+}
+/* ===== Small Labtop & Tablet Landscape ===== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .contain {width: 575px;margin: auto;}
+}
+/* ===== Mobile Landscape & Tablet Portrait ===== */
+@media (max-width: 600px) {
+  .contain {width: 400px;margin: auto;}
+}
+/* ===== Mobile Portriat ===== */
+@media (max-width: 400px) {
+  div {display: none;}
+  section {display: block;}
 }

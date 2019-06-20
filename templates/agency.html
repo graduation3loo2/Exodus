@@ -13,6 +13,81 @@
   <body>
 
     <!-- ///////////////////////////////////////////////////////////////////////// -->
+    <div id="new-vote" class="modal">
+	 		<form>
+				<div class="form-head">
+					<h2>creating new trip...</h2>
+					<i class="fas fa-times" onclick="document.getElementById('new-vote').style.display='none'" ></i>
+				</div>
+				<div class="form-mid">
+					<label>vote title</label>
+					<input type="text" name="From" placeholder="Vote Title">
+					<hr>
+					<div class="zoom">
+						<label> photos: </label>
+						<input type="file" name="pic" accept="image/*">
+						<input type="file" name="pic" accept="image/*">
+						<input type="file" name="pic" accept="image/*">
+						<input type="file" name="pic" accept="image/*">
+					</div>
+					<hr>
+          <label> Description: </label>
+					<textarea></textarea>
+					<hr>
+					<span class="terms"> by clicking "submit" you agree to our <a href="">terms of posting</a></span>
+				</div>
+				<div class="form-foot">
+					<button> submit </button>
+				</div>
+			</form>
+		</div>
+    <!-- ///////////////////////////////////////////////////////////////////////// -->
+		<div id="new-trip" class="modal">
+			<form>
+					<div class="form-head">
+						<h2>creating new trip...</h2>
+						<i class="fas fa-times" onclick="document.getElementById('new-trip').style.display='none'" ></i>
+					</div>
+					<div class="form-mid">
+						<label> from: </label>
+						<input type="text" name="From" placeholder="e.g Alexandria">
+						<label> to: </label>
+						<input type="text" name="To" placeholder="e.g Dahab">
+						<hr>
+						<label> from: </label>
+						<input type="date" name="duration" placeholder="e.g 1/7/2019">
+						<label> to: </label>
+						<input type="date" name="duration" placeholder="e.g 7/7/2019">
+						<hr>
+						<label> Description: </label>
+						<textarea></textarea>
+						<hr>
+						<div class="zoom">
+							<label> photos: </label>
+							<input type="file" name="pic" accept="image/*">
+							<input type="file" name="pic" accept="image/*">
+							<input type="file" name="pic" accept="image/*">
+							<input type="file" name="pic" accept="image/*">
+						</div>
+						<hr>
+						<label> board Type: </label>
+						<input type="text" name="food" placeholder="e.g Full board">
+						<label> price per Individual: </label>
+						<input type="number" name="$" placeholder="e.g 2500LE">
+						<hr>
+						<label> promo Code: </label>
+						<input type="text" name="Promocode" placeholder="Promo Code">
+						<label> booking Deadline: </label>
+						<input type="date" name="">
+						<hr>
+						<span class="terms"> by clicking "submit" you agree to our <a href="">terms of posting</a></span>
+					</div>
+					<div class="form-foot">
+						<button> submit </button>
+					</div>
+			</form>
+		</div>
+    <!-- ///////////////////////////////////////////////////////////////////////// -->
 		<div id="edit-info" class="modal">
 			<div class="contain">
 				<form> <!--el data 7atro7 lel server esmo eh -->
@@ -238,6 +313,20 @@
       </div>
     </div>
     <!-- End Footer -->
+
+    <!-- Start Scroll To Top Button -->
+    <div class="scroll-top">
+      <span>Top</span>
+      <i class="fas fa-arrow-up"></i>
+    </div>
+    <!-- End Scroll To Top Button -->
+
+    <!-- Start Div Error -->
+    <section>
+      <h1>unfortunatly!...</h1>
+      <p>this website dosen't support screen less than 400px</p>
+    </section>
+    <!-- End Div Error -->
 
     <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>

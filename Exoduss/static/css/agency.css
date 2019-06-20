@@ -1,20 +1,4 @@
 
-.header .head-title{ /* Start Search Header */
-  text-align: center;
-  display: inline-block;
-  border-radius: 5px;
-  background-color: rgba(163, 163, 163, 0.28);
-}
-.header .head-title h1{
-  text-transform: capitalize;
-  color: #eee;
-  font-size: 40px;
-  padding: 0 20px;
-  border-radius: 5px;
-  margin: 10px 0;
-}
-/* End Header */
-
 /* Start Tabs Panel */
 .tabs-panel{
   float: left;
@@ -139,12 +123,11 @@
 .tab-details{
   float: left;
   width: 75%;
-  margin-left: 2%;
   overflow: hidden;
   padding: 0 20px;
   background: #eee;
   box-shadow: 0px 0px 10px 0px #bbb;
-  margin-top: 30px;
+  margin: 30px 0 30px 2%;
   border-radius: 5px;
   display: none;
 }
@@ -260,7 +243,7 @@
   margin-right: 15px;
   font-size: 20px;
   font-weight: 500;
-  padding-bottom: 12px;
+  padding-bottom: 13px;
 }
 .tab-details .post .post-info p{
   font-weight: 500;
