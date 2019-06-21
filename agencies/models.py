@@ -13,7 +13,7 @@ class Agencies(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'agencies'
+        db_table = 'Agencies'
 
 
 

@@ -96,7 +96,7 @@
   color: #555;
   line-height: 1.5;
 }
-.votes .main-vote .vote-info span{
+.votes .main-vote .vote-info input{
   text-transform: capitalize;
   float: left;
   color: #eee;
@@ -112,12 +112,13 @@
   position: relative;
   bottom: -26px;
 }
-.votes .main-vote .vote-info span:nth-of-type(2){
+.votes .main-vote .vote-info input:nth-of-type(2){
   background: #d00303;
   width: 30%;
   text-align: right;
 }
-.votes .main-vote .vote-info span i{
+.votes .main-vote .vote-info input i{
   margin: 0 10px;
 }
 /* End Votes */
++

@@ -162,10 +162,11 @@ class Response(models.Model):
     vote = models.ForeignKey('Vote', models.DO_NOTHING, db_column='Vote_id', primary_key=True)  # Field name made lowercase.
     user = models.ForeignKey('Users', models.DO_NOTHING, db_column='User_id')  # Field name made lowercase.
     interested = models.IntegerField(db_column='Interested')  # Field name made lowercase.
+    uninterested = models.IntegerField(db_column='UnInterested')  # Field name made lowercase.
 
     class Meta:
         managed = False
-        db_table = 'response'
+        db_table = 'Response'
         unique_together = (('vote', 'user'),)
 
 
