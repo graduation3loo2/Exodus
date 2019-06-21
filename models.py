@@ -1,3 +1,10 @@
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
 
@@ -14,7 +21,113 @@ class Agencies(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'agencies'
+        db_table = 'Agencies'
+
+
+class Comment(models.Model):
+    comment_id = models.AutoField(db_column='Comment_id', primary_key=True)  # Field name made lowercase.
+    user = models.ForeignKey('Users', models.DO_NOTHING, db_column='User_id')  # Field name made lowercase.
+    trip = models.ForeignKey('Trips', models.DO_NOTHING, db_column='Trip_id')  # Field name made lowercase.
+    comment = models.TextField(db_column='Comment')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Comment'
+
+
+class Follows(models.Model):
+    user = models.ForeignKey('Users', models.DO_NOTHING, primary_key=True)
+    agency = models.ForeignKey(Agencies, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'Follows'
+        unique_together = (('user', 'agency'),)
+
+
+class Reply(models.Model):
+    agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id')  # Field name made lowercase.
+    comment = models.ForeignKey(Comment, models.DO_NOTHING, db_column='Comment_id')  # Field name made lowercase.
+    reply = models.TextField(db_column='Reply')  # Field name made lowercase.
+    reply_id = models.AutoField(db_column='Reply_id', primary_key=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Reply'
+
+
+class Reports(models.Model):
+    report_id = models.IntegerField(primary_key=True)
+    user = models.ForeignKey('Users', models.DO_NOTHING)
+    agency = models.ForeignKey(Agencies, models.DO_NOTHING)
+    message = models.TextField(db_column='Message', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Reports'
+
+
+class Response(models.Model):
+    vote = models.ForeignKey('Vote', models.DO_NOTHING, db_column='Vote_id', primary_key=True)  # Field name made lowercase.
+    user = models.ForeignKey('Users', models.DO_NOTHING, db_column='User_id')  # Field name made lowercase.
+    interested = models.IntegerField(db_column='Interested')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Response'
+        unique_together = (('vote', 'user'),)
+
+
+class TripPhotos(models.Model):
+    trip = models.ForeignKey('Trips', models.DO_NOTHING, db_column='Trip_id', primary_key=True)  # Field name made lowercase.
+    url = models.TextField(db_column='URL')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = "Trip_Photos'"
+
+
+class Trips(models.Model):
+    trip_id = models.AutoField(db_column='Trip_id', primary_key=True)  # Field name made lowercase.
+    agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id')  # Field name made lowercase.
+    name = models.CharField(db_column='Name', max_length=50)  # Field name made lowercase.
+    from_location = models.CharField(db_column='From_Location', max_length=45)  # Field name made lowercase.
+    to_location = models.CharField(db_column='To_Location', max_length=45)  # Field name made lowercase.
+    date_from = models.DateTimeField(db_column='Date_From')  # Field name made lowercase.
+    date_to = models.DateTimeField(db_column='Date_To')  # Field name made lowercase.
+    deadline = models.DateTimeField(db_column='Deadline')  # Field name made lowercase.
+    meals = models.CharField(db_column='Meals', max_length=45)  # Field name made lowercase.
+    price = models.FloatField(db_column='Price')  # Field name made lowercase.
+    description = models.TextField(db_column='Description')  # Field name made lowercase.
+    views = models.PositiveIntegerField(db_column='Views')  # Field name made lowercase.
+    rate = models.FloatField(db_column='Rate')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Trips'
+
+
+class Users(models.Model):
+    user_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+    phone = models.CharField(max_length=11, blank=True, null=True)
+    city = models.CharField(max_length=45)
+
+    class Meta:
+        managed = False
+        db_table = 'Users'
+
+
+class Vote(models.Model):
+    vote_id = models.AutoField(db_column='Vote_id', primary_key=True)  # Field name made lowercase.
+    agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id')  # Field name made lowercase.
+    name = models.CharField(db_column='Name', max_length=45)  # Field name made lowercase.
+    description = models.TextField(db_column='Description')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Vote'
 
 
 class AuthGroup(models.Model):
@@ -127,16 +240,6 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
-class Follows(models.Model):
-    user = models.ForeignKey('Users', models.DO_NOTHING, primary_key=True)
-    agency = models.ForeignKey(Agencies, models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'follows'
-        unique_together = (('user', 'agency'),)
-
-
 class Phones(models.Model):
     agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id', primary_key=True)  # Field name made lowercase.
     phone = models.CharField(max_length=13)
@@ -145,78 +248,3 @@ class Phones(models.Model):
         managed = False
         db_table = 'phones'
         unique_together = (('agency', 'phone'),)
-
-
-class Reports(models.Model):
-    report_id = models.IntegerField(primary_key=True)
-    user = models.ForeignKey('Users', models.DO_NOTHING)
-    agency = models.ForeignKey(Agencies, models.DO_NOTHING)
-    message = models.TextField(db_column='Message', blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'reports'
-
-
-class Response(models.Model):
-    vote = models.ForeignKey('Vote', models.DO_NOTHING, db_column='Vote_id', primary_key=True)  # Field name made lowercase.
-    user = models.ForeignKey('Users', models.DO_NOTHING, db_column='User_id')  # Field name made lowercase.
-    interested = models.IntegerField(db_column='Interested')  # Field name made lowercase.
-    uninterested = models.IntegerField(db_column='UnInterested')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'Response'
-        unique_together = (('vote', 'user'),)
-
-
-class TripPhotos(models.Model):
-    trip = models.ForeignKey('Trips', models.DO_NOTHING, db_column='Trip_id', primary_key=True)  # Field name made lowercase.
-    url = models.TextField(db_column='URL')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = "trip_photos'"
-
-
-class Trips(models.Model):
-    trip_id = models.AutoField(db_column='Trip_id', primary_key=True)  # Field name made lowercase.
-    agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id')  # Field name made lowercase.
-    name = models.CharField(db_column='Name', max_length=50)  # Field name made lowercase.
-    from_location = models.CharField(db_column='From_Location', max_length=45)  # Field name made lowercase.
-    to_location = models.CharField(db_column='To_Location', max_length=45)  # Field name made lowercase.
-    date_from = models.DateTimeField(db_column='Date_From')  # Field name made lowercase.
-    date_to = models.DateTimeField(db_column='Date_To')  # Field name made lowercase.
-    deadline = models.DateTimeField(db_column='Deadline')  # Field name made lowercase.
-    meals = models.CharField(db_column='Meals', max_length=45)  # Field name made lowercase.
-    price = models.FloatField(db_column='Price')  # Field name made lowercase.
-    description = models.TextField(db_column='Description')  # Field name made lowercase.
-    views = models.PositiveIntegerField(db_column='Views')  # Field name made lowercase.
-    rate = models.FloatField(db_column='Rate')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'trips'
-
-
-class Users(models.Model):
-    user_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-    phone = models.CharField(max_length=11, blank=True, null=True)
-    city = models.CharField(max_length=45)
-
-    class Meta:
-        managed = False
-        db_table = 'users'
-
-
-class Vote(models.Model):
-    vote_id = models.AutoField(db_column='Vote_id', primary_key=True)  # Field name made lowercase.
-    agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id')  # Field name made lowercase.
-    name = models.CharField(db_column='Name', max_length=45)  # Field name made lowercase.
-    description = models.TextField(db_column='Description')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'vote'
