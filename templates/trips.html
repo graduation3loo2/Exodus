@@ -12,42 +12,6 @@
   </head>
   <body>
 
-    <!-- Start Header -->
-    <div class="header">
-      <div class="overlay">
-        <div class="navbar"> <!-- Start Nav Bar -->
-          <div class="contain">
-            <div class="logo">
-              <a href="{% url 'user' %}"><img src="{% static 'photos/others/logo-2-ed.png' %}" alt=""></a>
-            </div>
-            <div class="tabs">
-              <ul>
-                <li>
-                  <a href="{% url 'home' %}">home</a>
-                </li>
-                <li>
-                  <a href="{% url 'trips' %}">trips</a>
-                </li>
-                <li>
-                  <a href="{% url 'votes' %}">votes</a>
-                </li>
-                <li>
-                  <a href="{% url 'agencies' %}">agencies</a>
-                </li>
-                <li class="sign_in">
-                  <a href="{% url 'forms' %}">sign in</a>
-                </li>
-              </ul>
-              <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-          </div>
-        </div> <!-- End Nav Bar -->
-
-      </div>
-    </div>
-    <!-- End Header -->
-
     <div class="contain">
       <!-- Start Filter -->
       <div class="filter">
@@ -127,30 +91,6 @@
     </div>
 
     <div class="clear"></div>
-
-    <!-- Start Footer -->
-    <div class="footer">
-      <div class="contain">
-        <div class="links">
-          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.yahoo.com" target="_blank"><i class="fab fa-yahoo"></i></a>
-          <div class="clear"></div>
-        </div>
-        <div class="copyright">
-          <h3>Copyright © 2019 <span>Exodus.com</span> , All Rights Reserved.</h3>
-        </div>
-        <div class="andro-app">
-          <div class="app">
-            <a href="{% url 'agency' %}" target="_blank">
-              <i class="fab fa-android"></i>
-              <h3>download exodus app</h3>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Footer -->
 
     <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
