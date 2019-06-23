@@ -1,15 +1,16 @@
 {% load static %}
+{% load mathfilters %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Exodus -> Votes</title>
+    <title>Exodus -> Trips</title>
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/votes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/trips.css' %}">
   </head>
   <body>
 
@@ -18,7 +19,7 @@
 			<form class="modal-content animate" action=""> <!--el data 7atro7 lel server esmo eh -->
 				<div class='usercontainer'>
 			        <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Form">x</span>
-					<img src="{%static 'photos/user.jpg' %}" alt="Avatar" class="avatar">
+					<img src="{% static 'photos/user.jpg' %}" alt="Avatar" class="avatar">
 					<label> <p> Create Your Account </p></label>
 				</div>
 				<div class="container">
@@ -37,7 +38,7 @@
 					<input type="password" placeholder=" Confirm Password" name="psw" required>
 					<br><br>
 					<label class="terms" >  By proceeding I agree to EXODUS's <a href="#" style="color:blue">Terms & Privacy</a></label> <br>
-					<button type="button" class=" btnsignup " >Submit</button> <br>
+					<button type="button" class=" btnsignup " >Submit</button> 
 					<button type="button" class=" btnsignup " onclick="document.getElementById('signup').style.display='none';document.getElementById('loginform').style.display='block'" >Already Have Account</button> <br> <br>
 				</div>
 			</form>
@@ -100,44 +101,79 @@
         </div> <!-- End Nav Bar -->
 
         <div class="head-title">
-          <h1>votes</h1>
+          <h1>trips</h1>
         </div> <!-- End Search Box -->
       </div>
     </div>
     <!-- End Header -->
 
     <div class="contain">
-      <!-- Start Votes -->
-          {% for vote in votes_all %}
-            <div class="votes">
-            <div class="main-vote">
-                <div class="vote-img">
-                    <img src="{% static 'photos/header-10.jpg' %}" alt="">
-                </div>
-                <div class="vote-info">
-                    <div class="inner-head">
-                        <h3>{{ vote.name }}</h3>
-                        {% for agency in agencies %}
-                            {% if agency.agency_id == vote.agency_id %}
-                                <h3>{{ agency.name }}</h3>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                    <div class="clear"></div>
-                    <p>{{ vote.description }}</p>
-                        {% for response in responses %}
-                            {% if response.vote_id == vote.vote_id %}
-                                <form method="get">
-                                <button type="submit" id="interest" class="interested" name="interest">{{ response.interested }}<i class="fas fa-thumbs-up"></i></button>
-                                <button type="submit" id="notinterest" class="notinterested" name="notinterest">{{ response.not_interested }}<i class="fas fa-thumbs-down"></i></button></form>
-                            {% endif %}
-                        {% endfor %}
-                    <div class="clear"></div>
-                </div>
-                </div>
+      <!-- Start Filter -->
+      <div class="filter">
+
+        <h2>find your trip</h2>
+        <form action="" method="get">
+
+          {{ form }}
+        <button type="submit" name="form" value="filter"><i class="fas fa-filter"></i>filter</button>
+        </form>
+
+      </div>
+      <!-- End Filter -->
+
+      <!-- Start Trips -->
+
+        <div class="trips">
+            <div class="sort">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <select id="sort" name="select">
+                        <option value="1">sort by...</option>
+                        <option value="price">price</option>
+                        <option value="date_from">date</option>
+                        <option value="duration">duration</option>
+                        <option value="going">going</option>
+                    </select>
+                    <i class="fas fa-arrow-up"></i>
+                    <i class="fas fa-arrow-down"></i>
+                    <button type="submit" name="button">sort</button>
+                </form>
             </div>
+            {% for trip in trips %}
+                <div class="trip-post">
+                    <div class="trip-img">
+                        <img src="{{ trip.tripphotos_set.all.0.url }}" alt="">
+                        <div class="overlay">
+                            <button class="learn-more" type="submit" name="button" value="">learn more</button>
+                        </div>
+                    </div>
+                    <div class="trip-info">
+                        <h2>{{ trip.name }}</h2>
+                        {% for agency in agencies %}
+                            {% if agency.agency_id == trip.agency_id %}
+                                <h2>{{ agency.name }}</h2>
+                            {% endif %}
+                        {% endfor %}
+                    <h4><span>price</span> {{ trip.price }}</h4>
+                    <h4><span>date</span> {{ trip.date_from | date:"j / n / Y" }}</h4>
+                    {% with to=trip.date_to|date:"U" %}
+                    {% with from=trip.date_from|date:"U"%}
+                    {% with seconds=to|sub:from %}
+                    {% with duration=seconds|div:"86400" %}
+                        <h4><span>duration</span> {{ duration|floatformat:"0" }} days</h4>
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    <h4><span>meals</span> {{ trip.meals }}</h4>
+
+                    <h4><span><i class="fas fa-plane"></i>going</span> 35</h4>
+                    <h4><span><i class="far fa-eye"></i>views</span> {{ trip.views }}</h4>
+                    </div>
+                </div>
             {% endfor %}
-      <!-- End Votes -->
+
+      <!-- End Trips -->
     </div>
 
     <div class="clear"></div>
@@ -178,6 +214,7 @@
           <div class="clear"></div>
         </div>
       </div>
+    </div>
     </div>
     <!-- End Footer -->
 
