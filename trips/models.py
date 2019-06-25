@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Agencies(models.Model):
     agency_id = models.AutoField(db_column='Agency_id', primary_key=True)  # Field name made lowercase.
@@ -15,6 +16,7 @@ class Agencies(models.Model):
     class Meta:
         managed = False
         db_table = 'Agencies'
+
 
 class Trips(models.Model):
     trip_id = models.AutoField(db_column='Trip_id', primary_key=True)  # Field name made lowercase.
@@ -35,6 +37,7 @@ class Trips(models.Model):
         managed = False
         db_table = 'Trips'
 
+
 class TripPhotos(models.Model):
     trip = models.ForeignKey('Trips', models.DO_NOTHING, db_column='Trip_id', primary_key=True)  # Field name made lowercase.
     url = models.TextField(db_column='URL')  # Field name made lowercase.
@@ -42,6 +45,7 @@ class TripPhotos(models.Model):
     class Meta:
         managed = False
         db_table = "Trip_Photos'"
+
 
 class Users(models.Model):
     user_id = models.AutoField(primary_key=True)
@@ -53,6 +57,7 @@ class Users(models.Model):
     class Meta:
         managed = False
         db_table = 'Users'
+
 
 class Activity(models.Model):
     user = models.ForeignKey('Users', models.DO_NOTHING)

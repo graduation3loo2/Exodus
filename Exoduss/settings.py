@@ -13,7 +13,11 @@ SECRET_KEY = '6=fe(=e!_@^k@qsu8i8e&($(^is%p1xv5ima4(j-ar#^d6!%_!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    '10.0.2.2',
+]
 
 STATICFILES_DIRS = [
     os.path.join(os.path.dirname(__file__), 'static'),
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'votes.apps.VotesConfig',
     'mathfilters',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +129,14 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+}
+
