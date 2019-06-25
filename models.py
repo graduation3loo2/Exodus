@@ -179,6 +179,11 @@ class TripPhotos(models.Model):
         db_table = "trip_photos'"
 
 
+class GoingTo(models.Model):
+    user = models.ForeignKey('Users', models.DO_NOTHING, db_column='User_id', primary_key=True)
+    trip = models.ForeignKey('Trips', models.DO_NOTHING, db_column='Trip_id')
+
+
 class Trips(models.Model):
     trip_id = models.AutoField(db_column='Trip_id', primary_key=True)  # Field name made lowercase.
     agency = models.ForeignKey(Agencies, models.DO_NOTHING, db_column='Agency_id')  # Field name made lowercase.
