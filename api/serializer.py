@@ -1,9 +1,20 @@
 from rest_framework import serializers
 
 from trips.models import Trips
+from votes.models import Vote
 
 
 class TripsSerializer(serializers.ModelSerializer):
+    agency_name = serializers.ReadOnlyField(source='agency.name')
+
     class Meta:
         model = Trips
-        fields = ('trip_id', 'agency_id', 'name', 'from_location', 'to_location', 'date_from', 'date_to', 'meals', 'deadline', 'price', 'description', 'views', 'rate')
+        fields = "__all__"
+
+
+class VoteSerializer(serializers.ModelSerializer):
+    agency_name = serializers.ReadOnlyField(source='agency.name')
+
+    class Meta:
+        model = Vote
+        fields = "__all__"
