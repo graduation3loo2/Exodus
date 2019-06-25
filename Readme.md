@@ -35,6 +35,11 @@ and install the required python packages using requirement.txt
  pip install -r requirements.txt
  ``` 
 
+ - in windows if you have a problem with downloading mysqlclient package you will find the soluion in these youtube videos:
+  
+    - [mysql is not recognized as an internal or external command,operable program or batch file](https://youtu.be/ZO9g5JTyvQY)
+    - [Fix pip install mysqlclient Error |Install Python mysqlclient in Windows 10](https://youtu.be/6SnE0r7g2lE )
+
 change the database username and password in settings.py file in exodus folder
 
 ```python
