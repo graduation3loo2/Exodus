@@ -13,6 +13,7 @@ class TripsViewSet(viewsets.ModelViewSet):
 
 class VotesViewSet(viewsets.ModelViewSet):
     queryset = Vote.objects.all()
+    queryset += Vote.
     serializer_class = VoteSerializer
 
 
