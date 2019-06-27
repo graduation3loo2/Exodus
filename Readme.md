@@ -97,7 +97,7 @@ open localhost at port 8000 in your browser [localhost:8000](http://127.0.0.1:80
   - or connect a real one
 
 
-- if you will use genymotion instead of android emulator change '10.0.2.2' to '10.2.2.3' in your allowed hosts in django so that your virtual machine will be able to connec to our api.
+- if you will use genymotion instead of android emulator change '10.0.2.2' to '10.2.2.3' in your allowed hosts in django so that your virtual machine will be able to connect to our api.
 
 ```python
 ALLOWED_HOSTS = [
