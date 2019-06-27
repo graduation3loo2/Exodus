@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exodus -> Trips</title>
+    <link rel="stylesheet" href="{% static 'css/font-awesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/exo-2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/trips.css' %}">
+  </head>
+  <body>
+
+    <div class="contain">
+      <!-- Start Filter -->
+      <div class="filter">
+        <h2>find your trip</h2>
+        <form action="" method="get">
+            {{ form }}
+          <button type="submit" name="form"><i class="fas fa-filter"></i>filter</button>
+        </form>
+
+      </div>
+      <!-- End Filter -->
+
+      <!-- Start Trips -->
+      <div class="trips">
+        <div class="sort">
+          <form action="" method="post">
+            {% csrf_token %}
+            <select id="sort" name="select">
+                <option value="1">sort by...</option>
+                <option value="price">price</option>
+                <option value="date_from">date</option>
+            </select>
+            <i class="fas fa-arrow-up"></i>
+            <i class="fas fa-arrow-down"></i>
+            <button type="submit" name="button">sort</button>
+        </form>
+        </div>
+        {% for t in trips %}
+{#            <a href="{% url 'trip-page' %}/{{ t.name }}">#}
+          <div class="trip-post">
+            <div class="trip-img">
+              <img src="{{ t.tripphotos_set.all.0.url }}" alt="">
+              <div class="overlay">
+                <button class="learn-more" type="button" name="button">learn more</button>
+              </div>
+            </div>
+            <div class="trip-info">
+              <h2>{{ t.name }}</h2>
+              <h2>{{ t.agency.name }}</h2>
+              <h4><span>price</span>{{ t.price }}</h4>
+              <h4><span>date</span>{{ t.date_from|date:"d/m/Y" }}</h4>
+              <h4><span>duration</span> {{ t.duration.days }} days</h4>
+              <h4><span>meals</span>{{ t.meals }}</h4>
+
+              <h4><span><i class="fas fa-plane"></i>going</span>{{ t.goingto_set.count }}</h4>
+              <h4><span><i class="far fa-eye"></i>views</span>{{ t.views }}</h4>
+            </div>
+          </div>
+{#        </a>#}
+        {% endfor %}
+      </div>
+      <!-- End Trips -->
+    </div>
+
+    <div class="clear"></div>
+
+    <script src="{% static 'js/JQuery%20(v3.2.1).js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

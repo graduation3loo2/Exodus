@@ -2,12 +2,13 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from api.views import TripsViewSet, VotesViewSet
+from api.views import TripsViewSet, VotesViewSet, ResponseViewSet, FollowViewSet
 
 router = routers.DefaultRouter()
 router.register(r'trips', TripsViewSet)
 router.register(r'votes', VotesViewSet)
-
+router.register(r'responses', ResponseViewSet)
+router.register(r'follows', FollowViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

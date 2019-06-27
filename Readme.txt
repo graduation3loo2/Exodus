@@ -87,25 +87,12 @@ open localhost at port 8000 in your browser [localhost:8000](http://127.0.0.1:80
 
 ### Android
 
-- Before running the android application you should run the django app so that you will be able to connect to our api
-
 - open the project in android studio using open an existing project then sync the project.
 
   - create a virtual device if you don't have one
      ![alt text](avd.png "AVD manager")
 
   - or connect a real one
-
-
-- if you will use genymotion instead of android emulator change '10.0.2.2' to '10.2.2.3' in your allowed hosts in django so that your virtual machine will be able to connec to our api.
-
-```python
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    '10.0.2.2',
-]
-```
  
 then run the application.
 
